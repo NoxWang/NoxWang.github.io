@@ -129,166 +129,15 @@
 </tbody></table>
 </li>
 </ol>
-<h3 id="1-2-网络应用模型"><a href="#1-2-网络应用模型" class="headerlink" title="1.2 网络应用模型"></a>1.2 网络应用模型</h3><ol>
-<li><p><strong>客户/服务器（C/S）模型</strong></p>
-<img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/01CSmodel.png" class title="客户&#x2F;服务器模型">
-
-<ul>
-<li><p><strong>服务器</strong>：提供计算服务的设备。</p>
-<p>服务器特点：永久提供服务；永久性访问地址/域名。</p>
-</li>
-<li><p><strong>客户机</strong>：请求计算服务的主机。</p>
-<p>客户机特点：与服务器通信，使用服务器提供的服务；间歇性接入网络；可能使用动态IP地址；不与其他客户机直接通信。</p>
-</li>
-<li><p><strong>模型应用</strong>：Web，文件传输FTP，远程登录，电子邮件。</p>
-</li>
-</ul>
-</li>
-<li><p><strong>P2P（Peer to Peer）模型</strong></p>
-<img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/02P2Pmodel.png" class title="P2P模型">
-
-<p><strong>特点</strong>：</p>
-<ul>
-<li><p>不存在永远在线的服务器</p>
-</li>
-<li><p>每个主机既可以提供服务，也可以请求服务；</p>
-</li>
-<li><p>任意端系统/节点之间可以直接通讯</p>
-</li>
-<li><p>节点间歇性接入网络</p>
-</li>
-<li><p>节点可能改变IP地址（可能会有动态IP地址）</p>
-</li>
-<li><p>可扩展性好（可以应对大量主机涌入）</p>
-</li>
-<li><p>网络健壮性好（不容易全部瘫痪）</p>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="2-DNS系统"><a href="#2-DNS系统" class="headerlink" title="2 DNS系统"></a>2 DNS系统</h2><h3 id="2-1-域名"><a href="#2-1-域名" class="headerlink" title="2.1 域名"></a>2.1 域名</h3><img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/03DNS.png" class title="域名结构">
-
-<h3 id="2-2域名服务器"><a href="#2-2域名服务器" class="headerlink" title="2.2域名服务器"></a>2.2域名服务器</h3><ol>
-<li><strong>根域名服务器</strong>：解析顶级域名</li>
-<li><strong>顶级域名服务器</strong>：管理该顶级域名服务器注册的所有二级域名</li>
-<li><strong>权限域名服务器</strong>：负责一个区的域名服务器</li>
-<li><strong>本地域名服务器</strong>：当一个主机发出DNS查询请求时，这个查询请求报文就发送给本地域名服务器。与主机距离近（不超过几个路由器）。如果一台主机想要查询的另一台主机与它同属于一个ISP，本地域名服务器即可立刻将域名转为IP地址，使查询过程更加简单快速。严格来说，本地DNS服务器并不属于域名服务器的结构。</li>
-</ol>
-<h3 id="2-3-域名解析过程"><a href="#2-3-域名解析过程" class="headerlink" title="2.3 域名解析过程"></a>2.3 域名解析过程</h3><img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/04DNS.png" class title="域名解析过程">
-
-<h3 id="2-4-DNS缓存"><a href="#2-4-DNS缓存" class="headerlink" title="2.4 DNS缓存"></a>2.4 DNS缓存</h3><p>为了改善时延性并减少因特网上传输的DNS数量，DNS广泛使用缓存技术。在一个请求链中，当某个DNS服务器接收一个DNS回答时，它能缓存包含在回答中的任何信息。这样，当另一个对相同主机名的查询到达该DNS服务器时，该DNS服务器就能够提供所要求的IP地址，即使它不是该主机名的权限服务器。由于主机和主机名与IP地址的映射并不是永久的，DNS服务器在一段时间后将丢弃并更新缓存信息。</p>
-<h2 id="3-文件传送协议FTP"><a href="#3-文件传送协议FTP" class="headerlink" title="3 文件传送协议FTP"></a>3 文件传送协议FTP</h2><ul>
-<li><p>两种文件传送协议：</p>
-<ul>
-<li><p><strong>文件传送协议FTP</strong>（File Transfer Protocol）</p>
-<p>提供不同种类主机系统（硬件、软件体系等都可以不同）之间的文件传输能力</p>
-</li>
-<li><p><strong>简单文件传送协议TFTP</strong>（Trivial File Transfer Protocol）</p>
-<p>很小、易于实现，适用于UDP环境，面向小文件</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-1-FTP服务器和用户端"><a href="#3-1-FTP服务器和用户端" class="headerlink" title="3.1 FTP服务器和用户端"></a>3.1 FTP服务器和用户端</h3><ul>
-<li>FTP是基于客户/服务器（C/S）的协议</li>
-<li>用户通过一个客户机程序连接至在远程计算机上运行的服务器程序</li>
-<li>依照FTP协议提供服务，进行文件传送的计算机就是<strong>FTP服务器</strong></li>
-<li>连接FTP服务器，遵循FTP协议与服务器传送文件的电脑就是<strong>FTP客户端</strong></li>
-</ul>
-<h3 id="3-2-FTP工作原理"><a href="#3-2-FTP工作原理" class="headerlink" title="3.2 FTP工作原理"></a>3.2 FTP工作原理</h3><img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/05FTP.png" class title="FTP工作原理">
-
-<img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/06FTP.png" class title="FTP工作原理">
-
-<p><strong>FTP传输模式：</strong></p>
-<ul>
-<li><p>文本模式：ASCII模式，以文本序列传输数据</p>
-</li>
-<li><p>二进制模式：Binary模式，以二进制序列传输数据</p>
-</li>
-</ul>
-<h2 id="4-电子邮件"><a href="#4-电子邮件" class="headerlink" title="4 电子邮件"></a>4 电子邮件</h2><h3 id="4-1-电子邮件系统概述"><a href="#4-1-电子邮件系统概述" class="headerlink" title="4.1 电子邮件系统概述"></a>4.1 电子邮件系统概述</h3><img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/07Email.png" class title="电子邮件系统">
-
-<h3 id="4-2-简单邮件传送协议SMTP"><a href="#4-2-简单邮件传送协议SMTP" class="headerlink" title="4.2 简单邮件传送协议SMTP"></a>4.2 简单邮件传送协议SMTP</h3><ul>
-<li><p>SMTP规定了两个相互通信的<strong>SMTP进程</strong>之间应如何交换信息</p>
-</li>
-<li><p>使用<strong>TCP连接</strong>，端口号<strong>25</strong>，<strong>C/S模型</strong></p>
-</li>
-<li><p>负责发送邮件的SMTP进程为<strong>SMTP客户</strong>，负责接收邮件的进程为<strong>SMTP服务器</strong></p>
-<p>（邮件服务器既可以作为客户端也可以作为服务器端）</p>
-</li>
-<li><p>SMTP规定了14条命令（几个字母）和21种应答信息（三位数字代码+简单文字说明）</p>
-</li>
-<li><p>SMTP通信三个阶段：<strong>连接建立</strong> –&gt; <strong>邮件传送</strong> –&gt; <strong>连接释放</strong></p>
-<img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/08Email.png" class title="SMTP通信阶段">
-</li>
-<li><p>SMTP缺点：</p>
-<ul>
-<li>不能传送可执行文件或其他二进制对象</li>
-<li>仅限于传送7位ASCII码，不能传送非英语国家文字</li>
-<li>拒绝超过一定长度的邮件</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-3-MIME"><a href="#4-3-MIME" class="headerlink" title="4.3 MIME"></a>4.3 MIME</h3><p>通用因特网邮件扩充MIME</p>
-<img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/09MIME.png" class title="MIME">
-
-<h3 id="4-4-邮局协议POP3"><a href="#4-4-邮局协议POP3" class="headerlink" title="4.4 邮局协议POP3"></a>4.4 邮局协议POP3</h3><ul>
-<li>TCP连接、端口号110、C/S</li>
-</ul>
-<h3 id="4-5-网际报文存取协议IMAP"><a href="#4-5-网际报文存取协议IMAP" class="headerlink" title="4.5 网际报文存取协议IMAP"></a>4.5 网际报文存取协议IMAP</h3><img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/10IMAP.png" class title="IMAP">
-
-<h3 id="4-6-基于万维网的电子邮件"><a href="#4-6-基于万维网的电子邮件" class="headerlink" title="4.6 基于万维网的电子邮件"></a>4.6 基于万维网的电子邮件</h3><img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/11Email.png" class title="基于万维网的电子邮件">
-
-
-
-<h2 id="5-万维网和HTTP协议"><a href="#5-万维网和HTTP协议" class="headerlink" title="5 万维网和HTTP协议"></a>5 万维网和HTTP协议</h2><h3 id="5-1-万维网概述"><a href="#5-1-万维网概述" class="headerlink" title="5.1 万维网概述"></a>5.1 万维网概述</h3><ul>
-<li><p>万维网WWW（World Wide Web）：大规模的、联机式的信息储藏所/资料空间，无数个网络站点和网页的集合</p>
-</li>
-<li><p><strong>统一资源定位符URL</strong>唯一标识资源（文字、视频、音频…）</p>
-<p><strong>URL一般形式</strong>（不区分大小写）</p>
-<img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/12URL.png" class title="URL一般形式">
-</li>
-<li><p>WWW以<strong>客户/服务器</strong>方式工作，用户使用的浏览器是万维网客户程序，万维网文档所驻留的主机运行服务器程序</p>
-</li>
-<li><p>WWW使用<strong>超文本标记语言HTML</strong>，实现页面跳转和显示</p>
-</li>
-</ul>
-<h3 id="5-2-超文本传输协议HTTP"><a href="#5-2-超文本传输协议HTTP" class="headerlink" title="5.2 超文本传输协议HTTP"></a>5.2 超文本传输协议HTTP</h3><ol>
-<li><p>HTTP定义浏览器（WWW客户进程）怎样向WWW服务器请求WWW文档，以及服务器怎样把文档传送给浏览器</p>
-<img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/13HTTP.png" class title="HTTP工作流程"> 
-</li>
-<li><p><strong>HTTP协议的特点</strong></p>
-<ul>
-<li><p><strong>无状态</strong>（同一客户第二次访问同一个服务器上的界面时，服务器的响应与第一次相同）</p>
-<p>可使用Cookie（存储在用户主机中的<strong>文本文件</strong>）记录一段时间内某用户的访问记录</p>
-</li>
-<li><p>采用<strong>TCP</strong>作为传输层协议，但<strong>HTTP本身是无连接</strong>的（通信双方在交换HTTP报文之前不需要先建立HTTP连接）</p>
-</li>
-</ul>
-</li>
-<li><p><strong>HTTP协议的连接方式</strong></p>
-<img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/14HTTP.png" class title="HTTP连接方式分类">
-
-<img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/15HTTP.png" class title="HTTP连接方式">
-</li>
-<li><p><strong>HTTP报文结构</strong></p>
-<img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/16HTTP.png" class title="HTTP报文结构">
-
-<ul>
-<li><p>请求报文示例</p>
-<img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/17HTTP.png" class title="HTTP请求报文示例">
-</li>
-<li><p><strong>HTTP状态码</strong></p>
-<img src="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/18HTTP.png" class title="HTTP状态码">
-</li>
-</ul>
-</li>
-</ol>
-
+        
+          <p class="article-more-link">
+            <a href="/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://noxwang.github.io/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/" data-id="ck7sw458n00003wvf4uts9d88" class="article-share-link">Share</a>
+      <a data-url="https://noxwang.github.io/2020/03/11/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%91%E5%BA%94%E7%94%A8%E5%B1%82/" data-id="ck7swg6jp0000rovf778idum5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -337,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://noxwang.github.io/2020/03/11/hello-world/" data-id="ck7sw45bu00013wvf19ktfqc2" class="article-share-link">Share</a>
+      <a data-url="https://noxwang.github.io/2020/03/11/hello-world/" data-id="ck7swg6ng0001rovfapxw9s9d" class="article-share-link">Share</a>
       
       
     </footer>
